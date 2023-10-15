@@ -18,10 +18,10 @@ Carefully heed the user's instructions.
 Respond using Markdown.`;
 
 export const modelOptions: ModelOptions[] = [
-  'gpt-3.5-turbo',
-  'gpt-3.5-turbo-16k',
-  'gpt-4',
-  'gpt-4-32k',
+  'openai:gpt-3.5-turbo',
+  'openai:gpt-3.5-turbo-16k',
+  'openai:gpt-4',
+  'openai:gpt-4-32k',
   'pai-001-beta',
   'pai-001-light-beta'
   // 'gpt-3.5-turbo-0301',
@@ -29,66 +29,66 @@ export const modelOptions: ModelOptions[] = [
   // 'gpt-4-32k-0314',
 ];
 
-export const defaultModel = 'pai-001-beta';
+export const defaultModel = 'gpt-3.5-turbo-16k';
 
 export const modelMaxToken = {
-  'gpt-3.5-turbo': 4096,
-  'gpt-3.5-turbo-0301': 4096,
-  'gpt-3.5-turbo-0613': 4096,
-  'gpt-3.5-turbo-16k': 16384,
-  'gpt-3.5-turbo-16k-0613': 16384,
-  'gpt-4': 8192,
-  'gpt-4-0314': 8192,
-  'gpt-4-0613': 8192,
-  'gpt-4-32k': 32768,
-  'gpt-4-32k-0314': 32768,
-  'gpt-4-32k-0613': 32768,
+  'openai:gpt-3.5-turbo': 4096,
+  'openai:gpt-3.5-turbo-0301': 4096,
+  'openai:gpt-3.5-turbo-0613': 4096,
+  'openai:gpt-3.5-turbo-16k': 16384,
+  'openai:gpt-3.5-turbo-16k-0613': 16384,
+  'openai:gpt-4': 8192,
+  'openai:gpt-4-0314': 8192,
+  'openai:gpt-4-0613': 8192,
+  'openai:gpt-4-32k': 32768,
+  'openai:gpt-4-32k-0314': 32768,
+  'openai:gpt-4-32k-0613': 32768,
   'pai-001-beta': 32768,
   'pai-001-light-beta': 32768,
 };
 
 export const modelCost = {
-  'gpt-3.5-turbo': {
+  'openai:gpt-3.5-turbo': {
     prompt: { price: 0.0015, unit: 1000 },
     completion: { price: 0.002, unit: 1000 },
   },
-  'gpt-3.5-turbo-0301': {
+  'openai:gpt-3.5-turbo-0301': {
     prompt: { price: 0.0015, unit: 1000 },
     completion: { price: 0.002, unit: 1000 },
   },
-  'gpt-3.5-turbo-0613': {
+  'openai:gpt-3.5-turbo-0613': {
     prompt: { price: 0.0015, unit: 1000 },
     completion: { price: 0.002, unit: 1000 },
   },
-  'gpt-3.5-turbo-16k': {
+  'openai:gpt-3.5-turbo-16k': {
     prompt: { price: 0.003, unit: 1000 },
     completion: { price: 0.004, unit: 1000 },
   },
-  'gpt-3.5-turbo-16k-0613': {
+  'openai:gpt-3.5-turbo-16k-0613': {
     prompt: { price: 0.003, unit: 1000 },
     completion: { price: 0.004, unit: 1000 },
   },
-  'gpt-4': {
+  'openai:gpt-4': {
     prompt: { price: 0.03, unit: 1000 },
     completion: { price: 0.06, unit: 1000 },
   },
-  'gpt-4-0314': {
+  'openai:gpt-4-0314': {
     prompt: { price: 0.03, unit: 1000 },
     completion: { price: 0.06, unit: 1000 },
   },
-  'gpt-4-0613': {
+  'openai:gpt-4-0613': {
     prompt: { price: 0.03, unit: 1000 },
     completion: { price: 0.06, unit: 1000 },
   },
-  'gpt-4-32k': {
+  'openai:gpt-4-32k': {
     prompt: { price: 0.06, unit: 1000 },
     completion: { price: 0.12, unit: 1000 },
   },
-  'gpt-4-32k-0314': {
+  'openai:gpt-4-32k-0314': {
     prompt: { price: 0.06, unit: 1000 },
     completion: { price: 0.12, unit: 1000 },
   },
-  'gpt-4-32k-0613': {
+  'openai:gpt-4-32k-0613': {
     prompt: { price: 0.06, unit: 1000 },
     completion: { price: 0.12, unit: 1000 },
   },
