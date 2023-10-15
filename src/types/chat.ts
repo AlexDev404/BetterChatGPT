@@ -49,7 +49,9 @@ export interface Folder {
   color?: string;
 }
 
-export type ModelOptions = 'openai:gpt-4' | 'openai:gpt-4-32k' | 'openai:gpt-3.5-turbo' | 'openai:gpt-3.5-turbo-16k' | 'pai-001-beta' | 'pai-001-light-beta';
+export type ModelOptions = 'openai:gpt-4' | 'openai:gpt-4-32k' | 'openai:gpt-3.5-turbo' | 'openai:gpt-3.5-turbo-16k' | 'pai-001-beta' | 'pai-001-light-beta' | 'openai:text-ada-001'
+                         | 'openai:text-babbage-001' | 'openai:text-curie-001' | 'openai:text-davinci-002' | 'openai:text-davinci-003' | 'cohere:command-nightly' | 'cohere:command-light-nightly'
+                         | 'replicate:replicate/llama-2-7b-chat' | 'replicate:replicate/llama-2-13b-chat' | 'replicate:replicate/llama-2-70b-chat';
 // | 'gpt-3.5-turbo-0301';
 // | 'gpt-4-0314'
 // | 'gpt-4-32k-0314'
