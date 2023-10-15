@@ -22,12 +22,14 @@ export const modelOptions: ModelOptions[] = [
   'gpt-3.5-turbo-16k',
   'gpt-4',
   'gpt-4-32k',
+  'pai-001-beta',
+  'pai-001-light-beta'
   // 'gpt-3.5-turbo-0301',
   // 'gpt-4-0314',
   // 'gpt-4-32k-0314',
 ];
 
-export const defaultModel = 'gpt-3.5-turbo';
+export const defaultModel = 'pai-001-beta';
 
 export const modelMaxToken = {
   'gpt-3.5-turbo': 4096,
@@ -41,6 +43,8 @@ export const modelMaxToken = {
   'gpt-4-32k': 32768,
   'gpt-4-32k-0314': 32768,
   'gpt-4-32k-0613': 32768,
+  'pai-001-beta': 32768,
+  'pai-001-light-beta': 32768,
 };
 
 export const modelCost = {
@@ -85,6 +89,14 @@ export const modelCost = {
     completion: { price: 0.12, unit: 1000 },
   },
   'gpt-4-32k-0613': {
+    prompt: { price: 0.06, unit: 1000 },
+    completion: { price: 0.12, unit: 1000 },
+  },
+  'pai-001-beta': {
+    prompt: { price: 0.06, unit: 1000 },
+    completion: { price: 0.12, unit: 1000 },
+  },
+  'pai-001-light-beta': {
     prompt: { price: 0.06, unit: 1000 },
     completion: { price: 0.12, unit: 1000 },
   },
