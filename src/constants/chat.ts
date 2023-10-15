@@ -53,8 +53,18 @@ export const modelMaxToken = {
   'openai:gpt-4-32k': 32768,
   'openai:gpt-4-32k-0314': 32768,
   'openai:gpt-4-32k-0613': 32768,
-  'pai-001-beta': 32768,
-  'pai-001-light-beta': 32768,
+  'openai:text-ada-001': 2049,
+  'openai:text-babbage-001': 2049,
+  'openai:text-curie-001': 2049,
+  'openai:text-davinci-002': 4097,
+  'openai:text-davinci-003': 4097,
+  'cohere:command-nightly': 4096,
+  'cohere:command-light-nightly': 4096,
+  'replicate:replicate/llama-2-7b-chat': 4096,
+  'replicate:replicate/llama-2-13b-chat': 4096,
+  'replicate:replicate/llama-2-70b-chat': 4096,
+  'pai-001-beta': 4096,
+  'pai-001-light-beta': 4096,
 };
 
 export const modelCost = {
@@ -110,6 +120,50 @@ export const modelCost = {
     prompt: { price: 0.06, unit: 1000 },
     completion: { price: 0.12, unit: 1000 },
   },
+  'openai:text-ada-001': {
+    prompt: { price: 0.40, unit: 1000000 },
+    completion: { price: 1.60, unit: 1000000 },
+  },
+  'openai:text-babbage-001': {
+    prompt: { price: 0.60, unit: 1000000 },
+    completion: { price: 2.40, unit: 1000000 },
+  },
+  'openai:text-curie-001': {
+    prompt: { price: 3.00, unit: 1000000 },
+    completion: { price: 12.00, unit: 1000000 },
+  },
+  'openai:text-curie-001': {
+    prompt: { price: 3.00, unit: 1000000 },
+    completion: { price: 12.00, unit: 1000000 },
+  },
+  'openai:text-davinci-002': {
+    prompt: { price: 30.00, unit: 1000000 },
+    completion: { price: 120.00, unit: 1000000 },
+  },
+  'openai:text-davinci-003': {
+    prompt: { price: 30.00, unit: 1000000 },
+    completion: { price: 120.00, unit: 1000000 },
+  },
+  'cohere:command-nightly': {
+    prompt: { price: 15.00, unit: 1000000 },
+    completion: { price: 15.00, unit: 1000000 },
+  },
+  'cohere:command-light-nightly': {
+    prompt: { price: 15.00, unit: 1000000 },
+    completion: { price: 15.00, unit: 1000000 },
+  },
+  'replicate:replicate/llama-2-7b-chat': {
+    prompt: { price: 0.07, unit: 1000000 },
+    completion: { price: 0.28, unit: 1000000 },
+  },
+  'replicate:replicate/llama-2-13b-chat': {
+    prompt: { price: 0.14, unit: 1000000 },
+    completion: { price: 0.56, unit: 1000000 },
+  },
+  'replicate:replicate/llama-2-70b-chat': {
+    prompt: { price: 0.70, unit: 1000000 },
+    completion: { price: 2.80, unit: 1000000 },
+  }
 };
 
 export const defaultUserMaxToken = 4000;
