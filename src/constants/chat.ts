@@ -132,10 +132,6 @@ export const modelCost = {
     prompt: { price: 3.00, unit: 1000000 },
     completion: { price: 12.00, unit: 1000000 },
   },
-  'openai:text-curie-001': {
-    prompt: { price: 3.00, unit: 1000000 },
-    completion: { price: 12.00, unit: 1000000 },
-  },
   'openai:text-davinci-002': {
     prompt: { price: 30.00, unit: 1000000 },
     completion: { price: 120.00, unit: 1000000 },
