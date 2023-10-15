@@ -39,7 +39,7 @@ export const modelOptions: ModelOptions[] = [
   // 'gpt-4-32k-0314',
 ];
 
-export const defaultModel = 'gpt-3.5-turbo-16k';
+export const defaultModel = 'openai:gpt-3.5-turbo-16k';
 
 export const modelMaxToken = {
   'openai:gpt-3.5-turbo': 4096,
