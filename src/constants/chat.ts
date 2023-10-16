@@ -64,7 +64,7 @@ export const modelMaxToken = {
   'replicate:replicate/llama-2-13b-chat': 4096,
   'replicate:replicate/llama-2-70b-chat': 4096,
   'pai-001-beta': 4096,
-  'pai-001-light-beta': 16384,  // 4096 but it's buggy so yeah
+  'pai-001-light-beta': 4096,  // 4096 but it's buggy so yeah
 };
 
 export const modelCost = {
