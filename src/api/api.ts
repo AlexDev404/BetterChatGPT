@@ -2,6 +2,14 @@ import { ShareGPTSubmitBodyInterface } from '@type/api';
 import { ConfigInterface, MessageInterface } from '@type/chat';
 import { isAzureEndpoint } from '@utils/api';
 
+// Azure uses different naming conventions for some models
+// This map allows for custom model name transformations when using Azure endpoints
+// If a model is not in this map, the original model name will be used
+const azureModelMap: Partial<Record<ConfigInterface['model'], string>> = {
+  // Add model mappings here if Azure uses different names
+  // Example: 'openai:gpt-3.5-turbo': 'gpt-35-turbo'
+};
+
 export const getChatCompletion = async (
   endpoint: string,
   messages: MessageInterface[],
@@ -18,7 +26,7 @@ export const getChatCompletion = async (
   if (isAzureEndpoint(endpoint) && apiKey) {
     headers['api-key'] = apiKey;
 
-    const model = config.model === 'openai:gpt-3.5-turbo' ? 'gpt-35-turbo' : config.model === 'openai:gpt-3.5-turbo-16k' ? 'gpt-35-turbo-16k' : config.model === 'pai-001-beta' ? 'pai-001-beta' : config.model === 'pai-001-light-beta' ? 'pai-001-light-beta' : config.model;
+    const model = azureModelMap[config.model] || config.model;
 
     const apiVersion = '2023-03-15-preview';
 
@@ -63,7 +71,7 @@ export const getChatCompletionStream = async (
   if (isAzureEndpoint(endpoint) && apiKey) {
     headers['api-key'] = apiKey;
 
-    const model = config.model === 'openai:gpt-3.5-turbo' ? 'gpt-35-turbo' : config.model === 'openai:gpt-3.5-turbo-16k' ? 'gpt-35-turbo-16k' : config.model === 'pai-001-beta' ? 'pai-001-beta' : config.model === 'pai-001-light-beta' ? 'pai-001-light-beta' : config.model;
+    const model = azureModelMap[config.model] || config.model;
 
     const apiVersion = '2023-03-15-preview';
 
