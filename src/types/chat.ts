@@ -49,9 +49,17 @@ export interface Folder {
   color?: string;
 }
 
-export type ModelOptions = 'openai:gpt-4' | 'openai:gpt-4-32k' | 'openai:gpt-3.5-turbo' | 'openai:gpt-3.5-turbo-16k' | 'pai-001-beta' | 'pai-001-light-beta' | 'openai:text-ada-001'
-                         | 'openai:text-babbage-001' | 'openai:text-curie-001' | 'openai:text-davinci-002' | 'openai:text-davinci-003' | 'cohere:command-nightly' | 'cohere:command-light-nightly'
-                         | 'replicate:replicate/llama-2-7b-chat' | 'replicate:replicate/llama-2-13b-chat' | 'replicate:replicate/llama-2-70b-chat' | 'gpt-4o-latest';
+export type ModelOptions =   'pai-001-beta' |
+  'pai-001-light-beta' |
+  'gpt-4o-latest' |
+  '@cf/meta/llama-4-scout-17b-16e-instruct' |
+  'granite-chat' |
+  'microsoft/phi-3.5-vision-instruct' |
+  'openai/gpt-oss-20b' |
+  'gpt-4' |
+  'llama-3.1-8b-instruct' |
+  'phind-405b' |
+  'gemini-2.0-flash';
 // | 'gpt-3.5-turbo-0301';
 // | 'gpt-4-0314'
 // | 'gpt-4-32k-0314'
