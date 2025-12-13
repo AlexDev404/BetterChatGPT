@@ -59,7 +59,9 @@ export type ModelOptions =   'pai-001-beta' |
   'gpt-4' |
   'llama-3.1-8b-instruct' |
   'phind-405b' |
-  'gemini-2.0-flash';
+  'gemini-2.0-flash' |
+  'source-nano-beta' |
+  'source-mini-beta';
 // | 'gpt-3.5-turbo-0301';
 // | 'gpt-4-0314'
 // | 'gpt-4-32k-0314'
