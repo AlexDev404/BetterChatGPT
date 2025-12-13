@@ -2,12 +2,13 @@ import { ShareGPTSubmitBodyInterface } from '@type/api';
 import { ConfigInterface, MessageInterface } from '@type/chat';
 import { isAzureEndpoint } from '@utils/api';
 
-// Azure model name mapping for endpoints that require different model identifiers
+// Azure uses different naming conventions for some models
 // This map allows for custom model name transformations when using Azure endpoints
-// Currently empty as all models in ModelOptions use names compatible with Azure
-// Add mappings here if Azure uses different names for specific models
-// Example: 'standard-model-name': 'azure-specific-name'
-const azureModelMap: Partial<Record<ConfigInterface['model'], string>> = {};
+// If a model is not in this map, the original model name will be used
+const azureModelMap: Partial<Record<ConfigInterface['model'], string>> = {
+  // Add model mappings here if Azure uses different names
+  // Example: 'openai:gpt-3.5-turbo': 'gpt-35-turbo'
+};
 
 export const getChatCompletion = async (
   endpoint: string,
