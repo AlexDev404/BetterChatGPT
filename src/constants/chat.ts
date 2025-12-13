@@ -33,7 +33,8 @@ export const modelOptions: ModelOptions[] = [
   'replicate:replicate/llama-2-13b-chat',
   'replicate:replicate/llama-2-70b-chat',
   'pai-001-beta',
-  'pai-001-light-beta'
+  'pai-001-light-beta',
+  'gpt-4o-latest'
   // 'gpt-3.5-turbo-0301',
   // 'gpt-4-0314',
   // 'gpt-4-32k-0314',
@@ -65,6 +66,7 @@ export const modelMaxToken = {
   'replicate:replicate/llama-2-70b-chat': 4096,
   'pai-001-beta': 4096,
   'pai-001-light-beta': 4096,  // 4096 but it's buggy so yeah
+  'gpt-4o-latest': 4096
 };
 
 export const modelCost = {
@@ -157,6 +159,10 @@ export const modelCost = {
     completion: { price: 0.56, unit: 1000000 },
   },
   'replicate:replicate/llama-2-70b-chat': {
+    prompt: { price: 0.70, unit: 1000000 },
+    completion: { price: 2.80, unit: 1000000 },
+  },
+  'gpt-4o-latest': {
     prompt: { price: 0.70, unit: 1000000 },
     completion: { price: 2.80, unit: 1000000 },
   }
