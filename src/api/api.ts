@@ -2,6 +2,13 @@ import { ShareGPTSubmitBodyInterface } from '@type/api';
 import { ConfigInterface, MessageInterface } from '@type/chat';
 import { isAzureEndpoint } from '@utils/api';
 
+// Azure uses different naming conventions for some models
+// This map allows for custom model name transformations when using Azure endpoints
+const azureModelMap: Partial<Record<ConfigInterface['model'], string>> = {
+  'pai-001-beta': 'pai-001-beta',
+  'pai-001-light-beta': 'pai-001-light-beta',
+};
+
 export const getChatCompletion = async (
   endpoint: string,
   messages: MessageInterface[],
@@ -18,11 +25,6 @@ export const getChatCompletion = async (
   if (isAzureEndpoint(endpoint) && apiKey) {
     headers['api-key'] = apiKey;
 
-    // Azure uses different naming conventions for some models
-    const azureModelMap: Partial<Record<ConfigInterface['model'], string>> = {
-      'pai-001-beta': 'pai-001-beta',
-      'pai-001-light-beta': 'pai-001-light-beta',
-    };
     const model = azureModelMap[config.model] || config.model;
 
     const apiVersion = '2023-03-15-preview';
@@ -68,11 +70,6 @@ export const getChatCompletionStream = async (
   if (isAzureEndpoint(endpoint) && apiKey) {
     headers['api-key'] = apiKey;
 
-    // Azure uses different naming conventions for some models
-    const azureModelMap: Partial<Record<ConfigInterface['model'], string>> = {
-      'pai-001-beta': 'pai-001-beta',
-      'pai-001-light-beta': 'pai-001-light-beta',
-    };
     const model = azureModelMap[config.model] || config.model;
 
     const apiVersion = '2023-03-15-preview';
