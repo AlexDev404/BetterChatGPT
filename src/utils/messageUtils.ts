@@ -21,7 +21,7 @@ export const getChatGPTEncoding = (
   messages: MessageInterface[],
   model: ModelOptions
 ) => {
-  // Default to GPT-4 style encoding for all models
+  // Use standard encoding format for all models
   const msgSep = '';
   const roleSep = '<|im_sep|>';
 
