@@ -4,9 +4,10 @@ import { isAzureEndpoint } from '@utils/api';
 
 // Azure uses different naming conventions for some models
 // This map allows for custom model name transformations when using Azure endpoints
+// If a model is not in this map, the original model name will be used
 const azureModelMap: Partial<Record<ConfigInterface['model'], string>> = {
-  'pai-001-beta': 'pai-001-beta',
-  'pai-001-light-beta': 'pai-001-light-beta',
+  // Add model mappings here if Azure uses different names
+  // Example: 'openai:gpt-3.5-turbo': 'gpt-35-turbo'
 };
 
 export const getChatCompletion = async (
