@@ -21,9 +21,12 @@ const ApiMenu = ({
   const setApiKey = useStore((state) => state.setApiKey);
   const apiEndpoint = useStore((state) => state.apiEndpoint);
   const setApiEndpoint = useStore((state) => state.setApiEndpoint);
+  const streamingEnabled = useStore((state) => state.streamingEnabled);
+  const setStreamingEnabled = useStore((state) => state.setStreamingEnabled);
 
   const [_apiKey, _setApiKey] = useState<string>(apiKey || '');
   const [_apiEndpoint, _setApiEndpoint] = useState<string>(apiEndpoint);
+  const [_streamingEnabled, _setStreamingEnabled] = useState<boolean>(streamingEnabled);
   const [_customEndpoint, _setCustomEndpoint] = useState<boolean>(
     !availableEndpoints.includes(apiEndpoint)
   );
@@ -31,6 +34,7 @@ const ApiMenu = ({
   const handleSave = () => {
     setApiKey(_apiKey);
     setApiEndpoint(_apiEndpoint);
+    setStreamingEnabled(_streamingEnabled);
     setIsModalOpen(false);
   };
 
@@ -77,6 +81,16 @@ const ApiMenu = ({
             />
           )}
         </div>
+
+        <label className='flex gap-2 text-gray-900 dark:text-gray-300 text-sm items-center mb-6'>
+          <input
+            type='checkbox'
+            checked={_streamingEnabled}
+            className='w-4 h-4'
+            onChange={() => _setStreamingEnabled(!_streamingEnabled)}
+          />
+          Enable Streaming
+        </label>
 
         <div className='flex gap-2 items-center justify-center mt-2'>
           <div className='min-w-fit text-gray-900 dark:text-gray-300 text-sm'>
