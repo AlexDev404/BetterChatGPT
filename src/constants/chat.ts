@@ -17,8 +17,7 @@ export const _defaultSystemMessage =
 Carefully heed the user's instructions. 
 Respond using Markdown.`;
 
-type OptionalModelOptions = Partial<Array<ModelOptions>>;
-export const modelOptions: OptionalModelOptions = [
+export const modelOptions: ModelOptions = [
   'pai-001-beta',
   'pai-001-light-beta',
   'gpt-4o-latest',
