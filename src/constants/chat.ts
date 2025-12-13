@@ -17,7 +17,7 @@ export const _defaultSystemMessage =
 Carefully heed the user's instructions. 
 Respond using Markdown.`;
 
-export const modelOptions: ModelOptions = [
+export const modelOptions: ModelOptions[] = [
   'pai-001-beta',
   'pai-001-light-beta',
   'gpt-4o-latest',
@@ -34,9 +34,9 @@ export const modelOptions: ModelOptions = [
   // 'gpt-4-32k-0314',
 ];
 
-export const defaultModel = 'openai:gpt-3.5-turbo-16k';
+export const defaultModel: ModelOptions = 'gpt-4';
 
-export const modelMaxToken = {
+export const modelMaxToken: Record<ModelOptions, number> = {
   'pai-001-beta': 4096,
   'pai-001-light-beta': 4096,  // 4096 but it's buggy so yeah
   'gpt-4o-latest': 4096,
@@ -50,7 +50,10 @@ export const modelMaxToken = {
   'gemini-2.0-flash': 4096
 };
 
-export const modelCost = {
+export const modelCost: Record<ModelOptions, {
+  prompt: { price: number; unit: number };
+  completion: { price: number; unit: number };
+}> = {
   'pai-001-beta': {
     prompt: { price: 0.06, unit: 1000 },
     completion: { price: 0.12, unit: 1000 },

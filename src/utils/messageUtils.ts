@@ -21,10 +21,9 @@ export const getChatGPTEncoding = (
   messages: MessageInterface[],
   model: ModelOptions
 ) => {
-  const isGpt3 = model === 'openai:gpt-3.5-turbo';
-
-  const msgSep = isGpt3 ? '\n' : '';
-  const roleSep = isGpt3 ? '\n' : '<|im_sep|>';
+  // Default to GPT-4 style encoding for all models
+  const msgSep = '';
+  const roleSep = '<|im_sep|>';
 
   const serialized = [
     messages
