@@ -59,13 +59,7 @@ export type ModelOptions =   'pai-001-beta' |
   'gpt-4' |
   'llama-3.1-8b-instruct' |
   'phind-405b' |
-  'gemini-2.0-flash' |
-  
-
-  'openai:gpt-4' | 'openai:gpt-4-32k' | 'openai:gpt-3.5-turbo' | 'openai:gpt-3.5-turbo-16k' | 'openai:text-ada-001'
-  | 'openai:text-babbage-001' | 'openai:text-curie-001' | 'openai:text-davinci-002' | 'openai:text-davinci-003'
-  | 'cohere:command-nightly' | 'cohere:command-light-nightly' | 'replicate:replicate/llama-2-7b-chat'
-  | 'replicate:replicate/llama-2-13b-chat' | 'replicate:replicate/llama-2-70b-chat';
+  'gemini-2.0-flash';
 // | 'gpt-3.5-turbo-0301';
 // | 'gpt-4-0314'
 // | 'gpt-4-32k-0314'
