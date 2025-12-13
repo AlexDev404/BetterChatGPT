@@ -28,7 +28,9 @@ export const modelOptions: ModelOptions[] = [
   'gpt-4',
   'llama-3.1-8b-instruct',
   'phind-405b',
-  'gemini-2.0-flash'
+  'gemini-2.0-flash',
+  'source-nano-beta',
+  'source-mini-beta'
   // 'gpt-3.5-turbo-0301',
   // 'gpt-4-0314',
   // 'gpt-4-32k-0314',
@@ -47,7 +49,9 @@ export const modelMaxToken: Record<ModelOptions, number> = {
   'gpt-4': 4096,
   'llama-3.1-8b-instruct': 4096,
   'phind-405b': 4096,
-  'gemini-2.0-flash': 4096
+  'gemini-2.0-flash': 4096,
+  'source-nano-beta': 4096,
+  'source-mini-beta': 4096
 };
 
 export const modelCost: Record<ModelOptions, {
@@ -95,6 +99,14 @@ export const modelCost: Record<ModelOptions, {
     completion: { price: 2.80, unit: 1000000 },
   },
   'gemini-2.0-flash': {
+    prompt: { price: 0.70, unit: 1000000 },
+    completion: { price: 2.80, unit: 1000000 },
+  },
+  'source-nano-beta': {
+    prompt: { price: 0.70, unit: 1000000 },
+    completion: { price: 2.80, unit: 1000000 },
+  },
+  'source-mini-beta': {
     prompt: { price: 0.70, unit: 1000000 },
     completion: { price: 2.80, unit: 1000000 },
   },
