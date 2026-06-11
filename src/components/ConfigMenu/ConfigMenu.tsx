@@ -79,6 +79,11 @@ export const ModelSelector = ({
   _setModel: React.Dispatch<React.SetStateAction<ModelOptions>>;
 }) => {
   const [dropDown, setDropDown] = useState<boolean>(false);
+  const isKnownModel = modelOptions.includes(_model as (typeof modelOptions)[number]);
+  const [isCustom, setIsCustom] = useState<boolean>(!isKnownModel);
+  const [customModel, setCustomModel] = useState<string>(
+    !isKnownModel ? _model : ''
+  );
 
   return (
     <div className='mb-4'>
@@ -106,6 +111,7 @@ export const ModelSelector = ({
               className='px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer'
               onClick={() => {
                 _setModel(m);
+                setIsCustom(false);
                 setDropDown(false);
               }}
               key={m}
@@ -113,8 +119,31 @@ export const ModelSelector = ({
               {m}
             </li>
           ))}
+          <li
+            className='px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer border-t border-gray-200 dark:border-gray-600'
+            onClick={() => {
+              setIsCustom(true);
+              setDropDown(false);
+            }}
+          >
+            Other (custom)
+          </li>
         </ul>
       </div>
+      {isCustom && (
+        <input
+          type='text'
+          className='mt-2 px-3 py-2 text-sm rounded-lg border border-gray-400/50 bg-transparent text-gray-900 dark:text-white focus:ring-1 focus:ring-blue-500 w-full'
+          placeholder='Enter custom model name'
+          value={customModel}
+          onChange={(e) => {
+            setCustomModel(e.target.value);
+            if (e.target.value.trim()) {
+              _setModel(e.target.value.trim() as ModelOptions);
+            }
+          }}
+        />
+      )}
     </div>
   );
 };
@@ -150,7 +179,7 @@ export const MaxTokenSlider = ({
           _setMaxToken(Number(e.target.value));
         }}
         min={0}
-        max={modelMaxToken[_model]}
+        max={modelMaxToken[_model] ?? 4096}
         step={1}
         className='w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer'
       />
