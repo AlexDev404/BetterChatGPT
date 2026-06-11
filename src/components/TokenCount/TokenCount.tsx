@@ -21,9 +21,10 @@ const TokenCount = React.memo(() => {
   );
 
   const cost = useMemo(() => {
+    const costEntry = modelCost[model as keyof typeof modelCost];
+    if (!costEntry) return '0.00';
     const price =
-      modelCost[model].prompt.price *
-      (tokenCount / modelCost[model].prompt.unit);
+      costEntry.prompt.price * (tokenCount / costEntry.prompt.unit);
     return price.toPrecision(3);
   }, [model, tokenCount]);
 
